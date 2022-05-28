@@ -10,14 +10,24 @@ let elements = ["a", "abbr", "acronym", "audio", "b", "bdi", "bdo", "big", "br",
 
 
 function getRandomInt(min, max) {
-min = Math.ceil(min);
-max = Math.floor(max);
-return Math.floor(Math.random() * (max - min) + min);
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 function getRandomElement(arr) {
-let index = getRandomInt(0, arr.length);
-return arr[index];
+    let index = getRandomInt(0, arr.length);
+    return arr[index];
 }
 
-console.log(getRandomElement(elements));
+function appendRandomElement(id, arr) {
+    let elementString = getRandomElement(arr);
+    const elementNode = document.createElement(elementString);
+
+    const parent = document.getElementById(id);
+    parent.appendChild(elementNode);
+}
+
+
+
+appendRandomElement('footer', elements);
