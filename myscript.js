@@ -20,14 +20,35 @@ function getRandomElement(arr) {
     return arr[index];
 }
 
-function appendRandomElement(id, arr) {
-    let elementString = getRandomElement(arr);
-    const elementNode = document.createElement(elementString);
+function removeById(id) {
+    let node = document.getElementById(id);
 
-    const parent = document.getElementById(id);
+    if (node.parentNode) {
+        node.parentNode.removeChild(node);
+    }
+}
+
+function appendRandomElement(parentId, randomId, arr) {
+    let elementString = getRandomElement(arr);
+    let elementNode = document.createElement(elementString);
+
+    elementNode.setAttribute('id', randomId);
+
+    const parent = document.getElementById(parentId);
     parent.appendChild(elementNode);
+}
+
+function updateGuessElement(guessId, randomId) {
+    let guessElement = document.getElementById(guessId);
+    let randomElement = document.getElementById(randomId);
+
+    guessElement.textContent = randomElement.tagName.toLowerCase();
 }
 
 
 
-appendRandomElement('footer', elements);
+appendRandomElement('footer', 'randomElement', elements);
+
+updateGuessElement('tag', 'randomElement');
+
+
