@@ -33,3 +33,7 @@ body {
 #tag-container {
     display: flex; 
 }
+
+#random-element-container {
+    display: none;
+}

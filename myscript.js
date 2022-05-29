@@ -1,5 +1,5 @@
 
-let elements = ["a", "abbr", "acronym", "audio", "b", "bdi", "bdo", "big", "br", "button", "canvas", "cite", "code", "data", "datalist", "del", "dfn", "em", "embed", "i", "iframe", "img", "input", "ins", "kbd", "label", "map", "mark", "meter", "noscript", "object", "output", "picture", "progress", "q", "ruby", "s", "samp", "script", "select", "slot", "small", "span", "strong", "sub", "sup", "svg", "template", "textarea", "time", "u", "tt", "var", "video", "wbr", "address", "article", "aside", "blockquote", "details", "dialog", "dd", "div", "dl", "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "header", "hgroup", "hr", "li", "main", "nav", "ol", "p", "pre", "section", "table", "ul" ];
+const elements = ["a", "abbr", "acronym", "audio", "b", "bdi", "bdo", "big", "br", "button", "canvas", "cite", "code", "data", "datalist", "del", "dfn", "em", "embed", "i", "iframe", "img", "input", "ins", "kbd", "label", "map", "mark", "meter", "noscript", "object", "output", "picture", "progress", "q", "ruby", "s", "samp", "script", "select", "slot", "small", "span", "strong", "sub", "sup", "svg", "template", "textarea", "time", "u", "tt", "var", "video", "wbr", "address", "article", "aside", "blockquote", "details", "dialog", "dd", "div", "dl", "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "header", "hgroup", "hr", "li", "main", "nav", "ol", "p", "pre", "section", "table", "ul" ];
 
 
 function getRandomInt(min, max) {
@@ -40,20 +40,17 @@ function updateGuessElement(guessId, randomId) {
 
 
 
-appendRandomElement('footer', 'randomElement', elements);
+appendRandomElement('random-element-container', 'randomElement', elements);
 
 updateGuessElement('tag', 'randomElement');
 
 
-console.log(document.getElementById('randomElement'));
-
-let resetButton = document.getElementById('reset-button');
+const resetButton = document.getElementById('reset-button');
 
 resetButton.addEventListener('click', () => {
     removeById('randomElement');
-    appendRandomElement('footer', 'randomElement', elements);
+    appendRandomElement('random-element-container', 'randomElement', elements);
     updateGuessElement('tag', 'randomElement');
-
 });
 
 
