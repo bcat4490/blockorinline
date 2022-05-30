@@ -5,6 +5,10 @@ const randomElementId = 'randomElement';
 const randomElementParentId = 'random-element-container';
 const guessElementId = 'tag';
 
+const resetButtonId = 'reset-button';
+const inlineButtonId = 'button-inline';
+const blockButtonId = 'button-block';
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -89,7 +93,7 @@ updateGuessElement(guessElementId, randomElementId);
 
 
 
-const resetButton = document.getElementById('reset-button');
+const resetButton = document.getElementById(resetButtonId);
 
 resetButton.addEventListener('click', () => {
     removeById(randomElementId);
@@ -97,7 +101,7 @@ resetButton.addEventListener('click', () => {
     updateGuessElement(guessElementId, randomElementId);
 });
 
-const blockButton = document.getElementById('button-block');
+let blockButton = document.getElementById(blockButtonId);
 
 blockButton.addEventListener('click', () => {
     
@@ -108,9 +112,11 @@ blockButton.addEventListener('click', () => {
         toggleIncorrect('incorrect', 'hide');
     }
 
+    blockButton.disabled = true;
+
 });
 
-const inlineButton = document.getElementById('button-inline');
+let inlineButton = document.getElementById(inlineButtonId);
 
 inlineButton.addEventListener('click', () => {
     
@@ -120,6 +126,8 @@ inlineButton.addEventListener('click', () => {
     else {
         toggleIncorrect('incorrect', 'hide');
     }
+
+    inlineButton.disabled = true;
 
 });
 
