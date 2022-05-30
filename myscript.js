@@ -69,6 +69,18 @@ function isInline(randomId) {
     return false;
 }
 
+function toggleCorrect(correctId, classToToggle) {
+    let correctElement = document.getElementById(correctId);
+
+    correctElement.classList.toggle(classToToggle);
+}
+
+function toggleIncorrect(incorrectId, classToToggle) {
+    let incorrectElement = document.getElementById(incorrectId);
+
+    incorrectElement.classList.toggle(classToToggle);
+}
+
 
 
 appendRandomElement(randomElementParentId, randomElementId, elements);
@@ -88,13 +100,27 @@ resetButton.addEventListener('click', () => {
 const blockButton = document.getElementById('button-block');
 
 blockButton.addEventListener('click', () => {
-    console.log(isBlock(randomElementId));
+    
+    if (isBlock(randomElementId)) {
+        toggleCorrect('correct', 'hide');
+    }
+    else {
+        toggleIncorrect('incorrect', 'hide');
+    }
+
 });
 
 const inlineButton = document.getElementById('button-inline');
 
 inlineButton.addEventListener('click', () => {
-    console.log(isInline(randomElementId));
+    
+    if (isInline(randomElementId)) {
+        toggleCorrect('correct', 'hide');
+    }
+    else {
+        toggleIncorrect('incorrect', 'hide');
+    }
+
 });
 
 
