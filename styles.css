@@ -37,3 +37,7 @@ body {
 #random-element-container {
     display: none;
 }
+
+.hide {
+    display: none;
+}

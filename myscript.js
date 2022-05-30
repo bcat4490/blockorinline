@@ -47,8 +47,28 @@ function getDisplayValue(randomId) {
     let compStyles = window.getComputedStyle(randomElement);
 
     return compStyles.getPropertyValue('display');
-    
 }
+
+function isBlock(randomId) {
+    let randomElementDisplayValue = getDisplayValue(randomId);
+    
+    if (randomElementDisplayValue === 'block') {
+        return true;
+    }
+
+    return false;
+}
+
+function isInline(randomId) {
+    let randomElementDisplayValue = getDisplayValue(randomId);
+    
+    if (randomElementDisplayValue === 'inline') {
+        return true;
+    }
+
+    return false;
+}
+
 
 
 appendRandomElement(randomElementParentId, randomElementId, elements);
@@ -64,5 +84,18 @@ resetButton.addEventListener('click', () => {
     appendRandomElement(randomElementParentId, randomElementId, elements);
     updateGuessElement(guessElementId, randomElementId);
 });
+
+const blockButton = document.getElementById('button-block');
+
+blockButton.addEventListener('click', () => {
+    console.log(isBlock(randomElementId));
+});
+
+const inlineButton = document.getElementById('button-inline');
+
+inlineButton.addEventListener('click', () => {
+    console.log(isInline(randomElementId));
+});
+
 
 
