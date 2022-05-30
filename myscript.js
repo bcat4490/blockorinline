@@ -42,11 +42,19 @@ function updateGuessElement(guessId, randomId) {
     guessElement.textContent = randomElement.tagName.toLowerCase();
 }
 
+function getDisplayValue(randomId) {
+    const randomElement = document.getElementById(randomId);
+    let compStyles = window.getComputedStyle(randomElement);
+
+    return compStyles.getPropertyValue('display');
+    
+}
 
 
 appendRandomElement(randomElementParentId, randomElementId, elements);
 
 updateGuessElement(guessElementId, randomElementId);
+
 
 
 const resetButton = document.getElementById('reset-button');
