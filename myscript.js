@@ -88,22 +88,22 @@ function toggleIncorrect(incorrectId, classToToggle) {
     incorrectElement.classList.toggle(classToToggle);
 }
 
-function disableButtons(blockButtonId, inlineButtonId) {
+
+function toggleButtons(blockButtonId, inlineButtonId) {
     let blockButton = document.getElementById(blockButtonId);
     let inlineButton = document.getElementById(inlineButtonId);
 
-    blockButton.disabled = true;
-    inlineButton.disabled = true;
+    if (blockButton.disabled === true && inlineButton.disabled === true) {
+        blockButton.disabled = false;
+        inlineButton.disabled = false;
+    }
+    else {
+        blockButton.disabled = true;
+        inlineButton.disabled = true;
+    }
 }
 
-function enableButtons(blockButtonId, inlineButtonId) {
-    let blockButton = document.getElementById(blockButtonId);
-    let inlineButton = document.getElementById(inlineButtonId);
 
-    blockButton.disabled = false;
-    inlineButton.disabled = false;
-
-}
 
 
 
@@ -116,11 +116,12 @@ updateGuessElement(guessElementId, randomElementId);
 const resetButton = document.getElementById(resetButtonId);
 
 resetButton.addEventListener('click', () => {
+    
     removeById(randomElementId);
     appendRandomElement(randomElementParentId, randomElementId, elements);
     updateGuessElement(guessElementId, randomElementId);
 
-    enableButtons(blockButtonId, inlineButtonId);
+    toggleButtons(blockButtonId, inlineButtonId);
 });
 
 let blockButton = document.getElementById(blockButtonId);
@@ -134,7 +135,7 @@ blockButton.addEventListener('click', () => {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
-    disableButtons(blockButtonId, inlineButtonId);
+    toggleButtons(blockButtonId, inlineButtonId);
 
 });
 
@@ -149,7 +150,7 @@ inlineButton.addEventListener('click', () => {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
-    disableButtons(blockButtonId, inlineButtonId);
+    toggleButtons(blockButtonId, inlineButtonId);
 
 });
 
