@@ -125,6 +125,19 @@ resetButton.addEventListener('click', () => {
     updateGuessElement(guessElementId, randomElementId);
 
     enableButtons(blockButtonId, inlineButtonId);
+
+    let correctElement = document.getElementById(correctElementId);
+    let incorrectElement = document.getElementById(incorrectElementId);
+
+    if (!(correctElement.classList.contains(resultToggleClass))) {
+        toggleCorrect(correctElementId, resultToggleClass);
+    }
+
+    if (!(incorrectElement.classList.contains(resultToggleClass))) {
+        toggleIncorrect(incorrectElementId, resultToggleClass);
+    }
+ 
+
 });
 
 let blockButton = document.getElementById(blockButtonId);
