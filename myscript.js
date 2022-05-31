@@ -96,6 +96,15 @@ function disableButtons(blockButtonId, inlineButtonId) {
     inlineButton.disabled = true;
 }
 
+function enableButtons(blockButtonId, inlineButtonId) {
+    let blockButton = document.getElementById(blockButtonId);
+    let inlineButton = document.getElementById(inlineButtonId);
+
+    blockButton.disabled = false;
+    inlineButton.disabled = false;
+
+}
+
 
 
 appendRandomElement(randomElementParentId, randomElementId, elements);
@@ -110,6 +119,8 @@ resetButton.addEventListener('click', () => {
     removeById(randomElementId);
     appendRandomElement(randomElementParentId, randomElementId, elements);
     updateGuessElement(guessElementId, randomElementId);
+
+    enableButtons(blockButtonId, inlineButtonId);
 });
 
 let blockButton = document.getElementById(blockButtonId);
