@@ -9,6 +9,9 @@ const resetButtonId = 'reset-button';
 const inlineButtonId = 'button-inline';
 const blockButtonId = 'button-block';
 
+const correctElementId = 'correct';
+const incorrectElementId = 'incorrect';
+const resultToggleClass = 'hide';
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -106,10 +109,10 @@ let blockButton = document.getElementById(blockButtonId);
 blockButton.addEventListener('click', () => {
     
     if (isBlock(randomElementId)) {
-        toggleCorrect('correct', 'hide');
+        toggleCorrect(correctElementId, resultToggleClass);
     }
     else {
-        toggleIncorrect('incorrect', 'hide');
+        toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
     blockButton.disabled = true;
@@ -121,10 +124,10 @@ let inlineButton = document.getElementById(inlineButtonId);
 inlineButton.addEventListener('click', () => {
     
     if (isInline(randomElementId)) {
-        toggleCorrect('correct', 'hide');
+        toggleCorrect(correctElementId, resultToggleClass);
     }
     else {
-        toggleIncorrect('incorrect', 'hide');
+        toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
     inlineButton.disabled = true;
