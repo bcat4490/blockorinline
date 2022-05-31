@@ -88,6 +88,14 @@ function toggleIncorrect(incorrectId, classToToggle) {
     incorrectElement.classList.toggle(classToToggle);
 }
 
+function disableButtons(blockButtonId, inlineButtonId) {
+    let blockButton = document.getElementById(blockButtonId);
+    let inlineButton = document.getElementById(inlineButtonId);
+
+    blockButton.disabled = true;
+    inlineButton.disabled = true;
+}
+
 
 
 appendRandomElement(randomElementParentId, randomElementId, elements);
@@ -115,7 +123,7 @@ blockButton.addEventListener('click', () => {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
-    blockButton.disabled = true;
+    disableButtons(blockButtonId, inlineButtonId);
 
 });
 
@@ -130,7 +138,7 @@ inlineButton.addEventListener('click', () => {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
-    inlineButton.disabled = true;
+    disableButtons(blockButtonId, inlineButtonId);
 
 });
 
