@@ -170,5 +170,3 @@ inlineButton.addEventListener('click', () => {
 
 });
 
-
-
