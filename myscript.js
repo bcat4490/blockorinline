@@ -140,7 +140,7 @@ resetButton.addEventListener('click', () => {
 
 });
 
-let blockButton = document.getElementById(blockButtonId);
+const blockButton = document.getElementById(blockButtonId);
 
 blockButton.addEventListener('click', () => {
     
@@ -155,7 +155,7 @@ blockButton.addEventListener('click', () => {
 
 });
 
-let inlineButton = document.getElementById(inlineButtonId);
+const inlineButton = document.getElementById(inlineButtonId);
 
 inlineButton.addEventListener('click', () => {
     
