@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     height: 100vh;
     padding: 5px;
-
+    background-color: #1b1b1b;
 }
 
 #header {
@@ -31,7 +31,20 @@ body {
 }
 
 #tag-container {
-    display: flex; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tag {
+    color: #80f398;
+    font-size: 2.75rem;
+}
+
+.bracket {
+    color: rgb(255, 255, 255, .20);
+    font-size: 2.75rem;
+    font-weight: bold;
 }
 
 #random-element-container {
