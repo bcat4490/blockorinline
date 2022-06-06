@@ -12,14 +12,31 @@ body {
     background-color: #1b1b1b;
 }
 
+h1 {
+    font-size: 2.5rem;
+    color: rgba(255,255,255, 0.60);
+}
+
+a {
+    color: rgba(255,255,255, 0.60); 
+}
+
 #header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
     display: flex;
-    
+    gap: 15px; 
+}
+
+.nav-link {
+    font-size: 1.5rem;
+    text-decoration-color: #80f398;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 20px;
 }
 
 #main {
@@ -28,6 +45,12 @@ body {
     flex: 1;
     align-items: center;
     justify-content: center;
+    gap: 15px;
+}
+
+#option-container {
+    display: flex;
+    gap: 15px;
 }
 
 #tag-container {
@@ -42,17 +65,16 @@ body {
 }
 
 .bracket {
-    color: rgb(255, 255, 255, .20);
+    color: rgba(255, 255, 255, .60);
     font-size: 2.75rem;
     font-weight: bold;
-
 }
 
 .button {
     font-family: inherit;
     font-size: 24px;
     background-color: #1b1b1b;
-    border: 2px solid #80f398;
+    border: 2px solid rgba(255, 255, 255, .60);
     color: #80f398;
     padding: 0.25em 0.75em;
     min-width: 10ch;
@@ -60,18 +82,18 @@ body {
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
-    transition: 500ms all ease-in-out;
+    transition: 250ms all ease-in-out;
 }
 
 .button:hover {
     background-color: #80f398;
+    border-color: #80f398;
     color: #1b1b1b;
 }
 
-.button:focus {
-    outline-style: solid;
-    outline-color: transparent;
-    box-shadow: 0 0 0 3px #80f398 ;
+.option-button:focus {
+    background-color: #80f398;
+    color: #1b1b1b;
 }
 
 #random-element-container {
@@ -81,3 +103,4 @@ body {
 .hide {
     display: none;
 }
+
