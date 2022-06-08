@@ -34,8 +34,11 @@ a {
 
 .nav-link {
     font-size: 1.5rem;
-    text-decoration-color: #80f398;
-    text-decoration-thickness: 2px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline #80f398 solid 2px;
     text-underline-offset: 20px;
 }
 
@@ -100,7 +103,17 @@ a {
     display: none;
 }
 
+#correct {
+    color: rgba(255, 255, 255, .60);
+    font-size: 24px;
+}
+
+#incorrect {
+    color: rgba(255, 255, 255, .60);
+    font-size: 24px;   
+}
+
 .hide {
-    display: none;
+    opacity: 0;
 }
 
