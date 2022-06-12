@@ -13,6 +13,11 @@ const correctElementId = 'correct';
 const incorrectElementId = 'incorrect';
 const resultToggleClass = 'hide';
 
+const infoElementId = 'info';
+const infoSpanId = 'info-span';
+
+
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -105,6 +110,18 @@ function disableButtons(blockButtonId, inlineButtonId) {
     inlineButton.disabled = true;
 }
 
+function appendInfo(randomId, infoId, spanId) {
+    let randomElementDisplayValue = getDisplayValue(randomId);
+
+    let infoDiv = document.getElementById(infoId);
+
+    let tagString = document.getElementById(randomId).tagName.toLowerCase();
+
+    let infoString = tagString + " has a default display of <span id='" + spanId + "'>" + randomElementDisplayValue + "</span>!";
+
+    infoDiv.innerHTML = infoString;
+
+}
 
 
 
@@ -113,7 +130,6 @@ function disableButtons(blockButtonId, inlineButtonId) {
 appendRandomElement(randomElementParentId, randomElementId, elements);
 
 updateGuessElement(guessElementId, randomElementId);
-
 
 
 const resetButton = document.getElementById(resetButtonId);
@@ -172,3 +188,4 @@ inlineButton.addEventListener('click', () => {
 
 
 
+appendInfo(randomElementId, infoElementId, infoSpanId);
