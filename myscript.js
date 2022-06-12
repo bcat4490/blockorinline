@@ -123,6 +123,12 @@ function appendInfo(randomId, infoId, spanId) {
 
 }
 
+function removeInfo(infoId) {
+    let infoDiv = document.getElementById(infoId);
+
+    infoDiv.innerHTML = "";
+}
+
 
 
 
@@ -152,6 +158,8 @@ resetButton.addEventListener('click', () => {
     if (!(incorrectElement.classList.contains(resultToggleClass))) {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
+
+    removeInfo(infoElementId);
  
 
 });
@@ -166,6 +174,8 @@ blockButton.addEventListener('click', () => {
     else {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
+    
+    appendInfo(randomElementId, infoElementId, infoSpanId);
 
     disableButtons(blockButtonId, inlineButtonId);
 
@@ -182,10 +192,13 @@ inlineButton.addEventListener('click', () => {
         toggleIncorrect(incorrectElementId, resultToggleClass);
     }
 
+    appendInfo(randomElementId, infoElementId, infoSpanId);
+
     disableButtons(blockButtonId, inlineButtonId);
 
 });
 
 
 
-appendInfo(randomElementId, infoElementId, infoSpanId);
+
+
