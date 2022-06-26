@@ -10,11 +10,12 @@ body {
     height: 100vh;
     padding: 5px;
     background-color: #1b1b1b;
+    color: rgba(255,255,255, 0.60);
+
 }
 
 h1 {
     font-size: 2.5rem;
-    color: rgba(255,255,255, 0.60);
 }
 
 a {
@@ -29,7 +30,7 @@ a {
     text-decoration: none;
 }
 
-.green-span {
+.accent-text {
     color: #80f398;
 }
 
@@ -40,9 +41,6 @@ a {
     padding: 20px;
 }
 
-#title-span {
-    color: #80f398;
-}
 
 .nav-links {
     display: flex;
@@ -81,14 +79,11 @@ a {
 }
 
 #tag {
-    color: #80f398;
     font-size: 2.75rem;
 }
 
 .bracket {
-    color: rgba(255, 255, 255, .60);
-    font-size: 2.75rem;
-    font-weight: bold;
+    font-size: 2.75rem;    
 }
 
 .button {
@@ -130,17 +125,14 @@ a {
 }
 
 #correct {
-    color: rgba(255, 255, 255, .60);
     font-size: 24px;
 }
 
 #incorrect {
-    color: rgba(255, 255, 255, .60);
     font-size: 24px;   
 }
 
 #info {
-    color: rgba(255, 255, 255, .60);
     font-size: 24px;   
 }
 
@@ -160,17 +152,10 @@ a {
 }
 
 #git-link {
-    color:rgba(255, 255, 255, .60);
     font-size: 24px;
-    text-decoration: underline #80f398 solid 2px;
-}
-
-#git-link:hover {
-    text-decoration: none;
 }
 
 #about-main {
-    color:rgba(255, 255, 255, .60);
     display: flex;
     flex-direction: column;
     align-items: center;
